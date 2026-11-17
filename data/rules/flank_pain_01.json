@@ -1,0 +1,620 @@
+{
+  "case_id": "flank_pain_01",
+  "case_name": "腰腹痛问诊",
+  "version": "1.0",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-04",
+  "sources": [
+    "中华医学会泌尿外科学分会《中国泌尿外科和男科疾病诊断治疗指南（2019版）》尿石症章节",
+    "European Association of Urology Guidelines on Urolithiasis (2023)",
+    "《外科学》第九版（人民卫生出版社）泌尿系统结石篇",
+    "中华医学会急诊医学分会《急性腹痛诊断与治疗专家共识》"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "引导并归纳主诉（腰腹痛与持续时间）",
+          "hit_criteria": "询问主要不适、疼痛部位与持续时间，或复述确认主诉",
+          "keywords": [
+            "哪里不舒服",
+            "怎么不舒服",
+            "哪不舒服",
+            "主要症状",
+            "来看什么病",
+            "什么毛病",
+            "怎么不好",
+            "腰疼",
+            "腰痛",
+            "哪疼",
+            "多久了",
+            "什么时候开始"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "左侧腰腹绞痛六小时，阵发性"
+          ]
+        },
+        {
+          "id": "P02",
+          "content": "疼痛部位",
+          "hit_criteria": "询问疼痛的具体位置（左侧/右侧、腰部、肋脊角、下腹）",
+          "keywords": [
+            "哪个位置",
+            "具体位置",
+            "哪儿疼",
+            "什么部位",
+            "哪个部位",
+            "左边",
+            "右边",
+            "腰部",
+            "肋脊角",
+            "后背",
+            "下腹",
+            "肚子哪"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "左侧腰部、肋脊角，向下牵及左下腹"
+          ]
+        },
+        {
+          "id": "P03a",
+          "content": "疼痛性质",
+          "hit_criteria": "询问疼痛是什么样的（绞痛/胀痛/撕裂样/刀割样）",
+          "keywords": [
+            "什么样的疼",
+            "怎么个疼法",
+            "疼法",
+            "性质",
+            "绞痛",
+            "刀割",
+            "胀痛",
+            "撕裂",
+            "针扎",
+            "一阵一阵",
+            "怎么疼"
+          ],
+          "rw_score": 3,
+          "yj_score": 0.75,
+          "red_flag": true,
+          "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": [
+            "刀割样绞痛，阵发性，不是撕裂样"
+          ]
+        },
+        {
+          "id": "P03b",
+          "content": "疼痛程度",
+          "hit_criteria": "询问疼痛严重程度、能否忍受、是否影响活动或睡眠",
+          "keywords": [
+            "厉害吗",
+            "多疼",
+            "几分",
+            "评分",
+            "受得了",
+            "忍受",
+            "打滚",
+            "直不起腰",
+            "影响",
+            "睡不着"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.75,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "10 分里 8 分，疼得直不起腰、坐立不安"
+          ]
+        },
+        {
+          "id": "P04",
+          "content": "起病诱因",
+          "hit_criteria": "询问起病时在做什么、有无用力或运动诱因，以及平时饮水量",
+          "keywords": [
+            "诱因",
+            "什么原因",
+            "怎么开始的",
+            "当时在干",
+            "搬东西",
+            "用力",
+            "运动",
+            "喝水",
+            "饮水",
+            "出汗"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "搬货用力后突然发作；平时喝水少、出汗多"
+          ]
+        },
+        {
+          "id": "P05",
+          "content": "持续时间与发作频率",
+          "hit_criteria": "询问每次疼痛持续多久、间隔多久发作一次",
+          "keywords": [
+            "每次",
+            "多长时间",
+            "持续多久",
+            "多久疼一次",
+            "间隔",
+            "频率",
+            "一阵",
+            "十几分钟",
+            "半小时"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "每次十几分钟到半小时，间隔十几分钟再发"
+          ]
+        },
+        {
+          "id": "P06",
+          "content": "放射部位与睾丸情况",
+          "hit_criteria": "询问疼痛是否向下腹、腹股沟、会阴或阴囊放射，并确认睾丸有无肿痛",
+          "keywords": [
+            "放射",
+            "串",
+            "往哪",
+            "牵扯",
+            "会阴",
+            "阴囊",
+            "睾丸",
+            "腹股沟",
+            "大腿内侧",
+            "蛋蛋"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": true,
+          "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": [
+            "向左侧腹股沟、会阴放射",
+            "睾丸无疼痛、无肿大"
+          ]
+        },
+        {
+          "id": "P07",
+          "content": "缓解与加重因素",
+          "hit_criteria": "询问什么姿势或处理能减轻或加重疼痛，是否用过止痛药",
+          "keywords": [
+            "缓解",
+            "减轻",
+            "什么姿势",
+            "躺着",
+            "走动",
+            "热敷",
+            "止痛药",
+            "好点",
+            "什么情况下"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "怎么待着都不舒服，走动加重",
+            "热敷无效，未服止痛药"
+          ]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·排尿与尿量",
+          "hit_criteria": "询问尿频尿急尿痛、血尿（尿色发红）、尿量是否减少",
+          "keywords": [
+            "尿",
+            "小便",
+            "尿频",
+            "尿急",
+            "尿痛",
+            "血尿",
+            "肉眼血尿",
+            "尿色",
+            "尿量",
+            "排尿",
+            "尿多少",
+            "能尿",
+            "尿出来",
+            "小便多少",
+            "一天尿"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": [
+            "排尿刺痛，晨起尿色发红一次",
+            "尿量较平时减少，仍能排尿"
+          ]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·发热与消化道",
+          "hit_criteria": "询问发热、寒战、恶心呕吐、腹胀与出冷汗",
+          "keywords": [
+            "发烧",
+            "发热",
+            "寒战",
+            "发冷",
+            "恶心",
+            "呕吐",
+            "腹胀",
+            "肚子胀",
+            "出冷汗",
+            "无尿",
+            "尿不出来"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": [
+            "恶心、呕吐一次；无发热寒战",
+            "腹部稍胀，无完全无尿"
+          ]
+        },
+        {
+          "id": "P09",
+          "content": "病情演变",
+          "hit_criteria": "询问六小时内疼痛是加重、缓解还是反复发作",
+          "keywords": [
+            "变化",
+            "加重",
+            "越来越",
+            "这半天",
+            "进展",
+            "好转",
+            "一直疼",
+            "持续",
+            "变重",
+            "有没有变",
+            "重了"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": [
+            "六小时内反复发作，间隔变短，无缓解趋势",
+            "疼痛位置固定在左腰，未转移至右下腹"
+          ]
+        },
+        {
+          "id": "P10",
+          "content": "诊疗经过",
+          "hit_criteria": "询问是否就诊、做过 B 超、尿常规或血常规，用过什么药及疗效",
+          "keywords": [
+            "看过",
+            "就诊",
+            "医院",
+            "诊所",
+            "检查",
+            "B超",
+            "彩超",
+            "尿常规",
+            "化验",
+            "用过什么药",
+            "止痛药",
+            "效果",
+            "吃什么药",
+            "什么止痛药"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "未就诊，未做 B 超或尿常规",
+            "自行热敷无效，未服止痛药"
+          ]
+        },
+        {
+          "id": "P11",
+          "content": "一般情况",
+          "hit_criteria": "询问饮食、睡眠、大便与体重变化",
+          "keywords": [
+            "吃饭",
+            "饮食",
+            "睡觉",
+            "睡眠",
+            "大小便",
+            "二便",
+            "大便",
+            "体重",
+            "一般情况",
+            "胃口"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "疼得吃不下、没睡",
+            "大便正常，体重无变化"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏",
+          "keywords": [
+            "过敏",
+            "药物过敏",
+            "什么药过敏"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无"
+          ]
+        },
+        {
+          "id": "R02",
+          "content": "既往相关病史",
+          "hit_criteria": "询问结石、痛风、糖尿病、高血压与前列腺疾病史",
+          "keywords": [
+            "自己",
+            "得过",
+            "结石",
+            "痛风",
+            "尿酸",
+            "糖尿病",
+            "高血压",
+            "前列腺",
+            "以前得过",
+            "既往",
+            "基础病",
+            "老毛病",
+            "类似"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "三年前右侧输尿管结石自行排出",
+            "无糖尿病、痛风、高血压"
+          ]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟、每天支数与烟龄",
+          "keywords": [
+            "抽烟",
+            "吸烟",
+            "烟",
+            "几支",
+            "半包",
+            "一包",
+            "烟龄"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "吸烟五年，每天半包"
+          ]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": [
+            "喝酒",
+            "饮酒",
+            "酒",
+            "酒量"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "偶尔喝啤酒"
+          ]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属结石、痛风或泌尿系统疾病史",
+          "keywords": [
+            "家族",
+            "家里人",
+            "家人",
+            "父亲",
+            "母亲",
+            "父母",
+            "兄弟",
+            "姐妹",
+            "遗传",
+            "结石",
+            "痛风",
+            "家里",
+            "家中",
+            "亲属",
+            "长辈",
+            "类似",
+            "同样的病"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "父亲有肾结石",
+            "家族无痛风"
+          ]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": [
+            "手术",
+            "外伤",
+            "受过伤",
+            "做过手术",
+            "开过刀"
+          ],
+          "rw_score": 2,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无"
+          ]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与月经史",
+          "hit_criteria": "询问婚育情况或女性月经情况",
+          "keywords": [
+            "月经",
+            "婚育",
+            "结婚",
+            "生育",
+            "孩子",
+            "绝经"
+          ],
+          "rw_score": 0,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {
+            "sex": "female"
+          },
+          "core_facts": []
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": [
+        "怎么称呼",
+        "贵姓",
+        "姓名",
+        "叫什么",
+        "我是",
+        "接诊医生",
+        "哪位"
+      ],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "梗阻合并感染（需问清）",
+      "description": "结石梗阻合并感染可迅速进展为脓毒症：需问清有无发热寒战，并问清尿频尿急尿痛、血尿与尿量。两项都问到才算覆盖；病人目前无发热，不等于可以不问。",
+      "severity": "critical",
+      "match": "all",
+      "trigger": "P08a 且 P08b 均命中",
+      "guideline_source": "EAU Guidelines on Urolithiasis (2023) 感染性梗阻的处理"
+    },
+    {
+      "id": "F02",
+      "name": "疼痛持续不缓解（需问清）",
+      "description": "反复绞痛且间隔变短、无缓解趋势，提示结石可能嵌顿并造成梗阻，需评估肾积水与肾功能。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《中国泌尿外科和男科疾病诊断治疗指南（2019版）》尿石症"
+    },
+    {
+      "id": "F03",
+      "name": "非典型危重疼痛（需排除）",
+      "description": "突发撕裂样腰背痛并向背部放射需警惕腹主动脉夹层或破裂：需问清疼痛性质与放射部位。两项都问到才算覆盖；本例为绞痛并向会阴放射，仍必须先问清。",
+      "severity": "critical",
+      "match": "all",
+      "trigger": "P03a 且 P06 均命中",
+      "guideline_source": "《急性腹痛诊断与治疗专家共识》血管性腹痛鉴别"
+    }
+  ],
+  "standard_approach": [
+    {
+      "step": "主诉与时间轴",
+      "text": "确认腰痛/侧腹痛的起病方式、病程与当前发作频率，区分突发绞痛与持续胀痛。"
+    },
+    {
+      "step": "疼痛特征",
+      "text": "绞痛、阵发、向腹股沟会阴放射是输尿管结石的典型表现；撕裂样并向背部放射要警惕血管病变。"
+    },
+    {
+      "step": "排尿与感染",
+      "text": "尿频尿急尿痛、肉眼血尿、尿量减少和发热寒战，决定是否存在梗阻合并感染。"
+    },
+    {
+      "step": "鉴别问诊",
+      "text": "睾丸肿痛排除睾丸扭转，转移性右下腹痛排除阑尾炎，女性需排除妇科急症。"
+    },
+    {
+      "step": "背景与结石风险",
+      "text": "既往结石史、痛风、饮水少、家族史与职业出汗多，都是复发与病因评估的线索。"
+    },
+    {
+      "step": "诊疗经过与一般情况",
+      "text": "是否做过 B 超、尿常规，是否用过止痛药及疗效，以及饮食睡眠体重，决定下一步影像与镇痛方案。"
+    }
+  ]
+}
