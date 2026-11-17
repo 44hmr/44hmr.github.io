@@ -1,0 +1,503 @@
+{
+  "version": "1.0.0",
+  "systems": [
+    {
+      "id": "cardiovascular",
+      "label": "心血管系统",
+      "short_label": "心血管",
+      "order": 1,
+      "summary": "心脏、血管与循环相关疾病。",
+      "organs": ["heart", "coronary_arteries", "aorta", "peripheral_arteries"]
+    },
+    {
+      "id": "respiratory",
+      "label": "呼吸系统",
+      "short_label": "呼吸",
+      "order": 2,
+      "summary": "气道、肺与胸膜相关疾病。",
+      "organs": ["upper_airway", "trachea", "bronchi", "lungs", "pleura"]
+    },
+    {
+      "id": "digestive",
+      "label": "消化系统",
+      "short_label": "消化",
+      "order": 3,
+      "summary": "食管、胃肠、肝胆胰相关疾病。",
+      "organs": ["esophagus", "stomach", "liver", "gallbladder", "pancreas", "small_intestine", "colon", "rectum"]
+    },
+    {
+      "id": "neurology",
+      "label": "神经系统",
+      "short_label": "神经",
+      "order": 4,
+      "summary": "脑、脊髓与周围神经相关疾病。",
+      "organs": ["brain", "meninges", "spinal_cord", "cranial_nerves", "peripheral_nerves"]
+    },
+    {
+      "id": "urinary",
+      "label": "泌尿系统",
+      "short_label": "泌尿",
+      "order": 5,
+      "summary": "肾脏、输尿管、膀胱与尿道相关疾病。",
+      "organs": ["kidneys", "ureters", "bladder", "urethra"]
+    },
+    {
+      "id": "endocrinology",
+      "label": "内分泌与代谢",
+      "short_label": "内分泌",
+      "order": 6,
+      "summary": "垂体、甲状腺、肾上腺与代谢相关疾病。",
+      "organs": ["pituitary", "thyroid", "adrenal_glands", "pancreatic_islets"]
+    },
+    {
+      "id": "hematology",
+      "label": "血液系统",
+      "short_label": "血液",
+      "order": 7,
+      "summary": "骨髓、血细胞、脾与淋巴结相关疾病。",
+      "organs": ["bone_marrow", "spleen", "lymph_nodes", "blood"]
+    },
+    {
+      "id": "rheumatology",
+      "label": "风湿免疫",
+      "short_label": "风湿免疫",
+      "order": 8,
+      "summary": "关节、肌肉、结缔组织与自身免疫相关疾病。",
+      "organs": ["joints", "muscles", "connective_tissue", "spine"]
+    },
+    {
+      "id": "gynecology",
+      "label": "妇科生殖系统",
+      "short_label": "妇科生殖",
+      "order": 9,
+      "summary": "子宫、卵巢、输卵管与阴道相关疾病。",
+      "organs": ["uterus", "ovaries", "fallopian_tubes", "cervix", "vagina"]
+    },
+    {
+      "id": "infection",
+      "label": "感染与全身",
+      "short_label": "感染全身",
+      "order": 10,
+      "summary": "感染、发热与全身炎症相关疾病。",
+      "organs": ["immune_system", "skin", "mucous_membranes"]
+    }
+  ],
+  "regions": [
+    { "id": "head_neck", "label": "头颈", "order": 1 },
+    { "id": "chest", "label": "胸部", "order": 2 },
+    { "id": "abdomen", "label": "腹部", "order": 3 },
+    { "id": "back_flank", "label": "腰背", "order": 4 },
+    { "id": "limbs_joints", "label": "四肢关节", "order": 5 },
+    { "id": "general", "label": "全身", "order": 6 }
+  ],
+  "complaints": [
+    {
+      "key": "headache",
+      "label": "头痛",
+      "type": "pain",
+      "region_ids": ["head_neck"],
+      "system_ids": ["neurology", "infection"],
+      "order": 1,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "dizziness",
+      "label": "头晕",
+      "type": "dizziness",
+      "region_ids": ["head_neck"],
+      "system_ids": ["neurology", "cardiovascular", "endocrinology"],
+      "order": 2,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "syncope",
+      "label": "晕厥",
+      "type": "loss_of_consciousness",
+      "region_ids": ["head_neck"],
+      "system_ids": ["cardiovascular", "neurology", "endocrinology"],
+      "order": 3,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "seizure",
+      "label": "抽搐",
+      "type": "seizure",
+      "region_ids": ["head_neck"],
+      "system_ids": ["neurology", "infection", "endocrinology"],
+      "order": 4,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "weakness",
+      "label": "肢体无力",
+      "type": "weakness",
+      "region_ids": ["general"],
+      "system_ids": ["neurology", "endocrinology", "hematology"],
+      "order": 5,
+      "interview_focus": ["是否突发及分布", "言语、吞咽与面瘫", "血压、血糖与外伤"]
+    },
+    {
+      "key": "chest_pain",
+      "label": "胸痛",
+      "type": "pain",
+      "region_ids": ["chest"],
+      "system_ids": ["cardiovascular", "digestive", "respiratory"],
+      "order": 6,
+      "interview_focus": ["起病与诱因", "部位、放射与性质", "持续时间与缓解因素", "伴随症状与危险信号"]
+    },
+    {
+      "key": "palpitations",
+      "label": "心悸",
+      "type": "palpitations",
+      "region_ids": ["chest"],
+      "system_ids": ["cardiovascular", "endocrinology", "hematology"],
+      "order": 7,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "dyspnea",
+      "label": "呼吸困难",
+      "type": "dyspnea",
+      "region_ids": ["chest"],
+      "system_ids": ["respiratory", "cardiovascular", "hematology"],
+      "order": 8,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "cough",
+      "label": "咳嗽",
+      "type": "cough",
+      "region_ids": ["chest"],
+      "system_ids": ["respiratory", "infection"],
+      "order": 9,
+      "interview_focus": ["起病与病程", "干咳或咳痰及痰液性状", "发热、气促与胸痛", "吸烟史与用药史"]
+    },
+    {
+      "key": "hemoptysis",
+      "label": "咯血",
+      "type": "bleeding",
+      "region_ids": ["chest"],
+      "system_ids": ["respiratory", "cardiovascular", "infection"],
+      "order": 10,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "wheezing",
+      "label": "喘息",
+      "type": "wheezing",
+      "region_ids": ["chest"],
+      "system_ids": ["respiratory"],
+      "order": 11,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "abdominal_pain",
+      "label": "腹痛",
+      "type": "pain",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive", "gynecology", "urinary"],
+      "order": 12,
+      "interview_focus": ["起病与转移", "部位、性质与程度", "伴随症状与缓解因素", "妇科与泌尿相关询问"]
+    },
+    {
+      "key": "heartburn",
+      "label": "烧心与反酸",
+      "type": "heartburn",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive"],
+      "order": 13,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "nausea_vomiting",
+      "label": "恶心呕吐",
+      "type": "nausea_vomiting",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive", "neurology", "endocrinology", "urinary"],
+      "order": 14,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "diarrhea",
+      "label": "腹泻",
+      "type": "diarrhea",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive", "infection"],
+      "order": 15,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "constipation",
+      "label": "便秘",
+      "type": "constipation",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive", "neurology", "endocrinology"],
+      "order": 16,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "jaundice",
+      "label": "黄疸",
+      "type": "jaundice",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive", "hematology", "infection"],
+      "order": 17,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "hematemesis_melena",
+      "label": "呕血与黑便",
+      "type": "bleeding",
+      "region_ids": ["abdomen"],
+      "system_ids": ["digestive"],
+      "order": 18,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "dysuria",
+      "label": "尿痛",
+      "type": "urinary",
+      "region_ids": ["abdomen"],
+      "system_ids": ["urinary", "gynecology", "infection"],
+      "order": 19,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "hematuria",
+      "label": "血尿",
+      "type": "bleeding",
+      "region_ids": ["back_flank"],
+      "system_ids": ["urinary", "hematology", "infection"],
+      "order": 20,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "flank_pain",
+      "label": "腰痛与侧腹痛",
+      "type": "pain",
+      "region_ids": ["back_flank"],
+      "system_ids": ["urinary", "gynecology"],
+      "order": 21,
+      "interview_focus": ["起病与绞痛特点", "放射部位与血尿", "发热与排尿症状", "结石与妇科病史"]
+    },
+    {
+      "key": "oliguria",
+      "label": "少尿",
+      "type": "urinary",
+      "region_ids": ["general"],
+      "system_ids": ["urinary", "cardiovascular"],
+      "order": 22,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "polyuria_polydipsia",
+      "label": "多尿与多饮",
+      "type": "urinary",
+      "region_ids": ["general"],
+      "system_ids": ["endocrinology", "urinary"],
+      "order": 23,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "vaginal_bleeding",
+      "label": "阴道出血",
+      "type": "bleeding",
+      "region_ids": ["abdomen"],
+      "system_ids": ["gynecology", "endocrinology", "hematology"],
+      "order": 24,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "amenorrhea",
+      "label": "闭经",
+      "type": "menstrual",
+      "region_ids": ["abdomen"],
+      "system_ids": ["gynecology", "endocrinology"],
+      "order": 25,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "dysmenorrhea",
+      "label": "痛经",
+      "type": "pain",
+      "region_ids": ["abdomen"],
+      "system_ids": ["gynecology"],
+      "order": 26,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "vaginal_discharge",
+      "label": "阴道分泌物异常",
+      "type": "discharge",
+      "region_ids": ["abdomen"],
+      "system_ids": ["gynecology", "infection"],
+      "order": 27,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "fever",
+      "label": "发热",
+      "type": "fever",
+      "region_ids": ["general"],
+      "system_ids": ["infection", "respiratory", "urinary", "digestive", "hematology", "rheumatology"],
+      "order": 28,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "night_sweats",
+      "label": "盗汗",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["infection", "hematology", "endocrinology"],
+      "order": 29,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "weight_loss",
+      "label": "体重下降",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["endocrinology", "digestive", "hematology", "infection"],
+      "order": 30,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "weight_change",
+      "label": "体重变化",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["endocrinology", "digestive", "infection"],
+      "order": 31,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "fatigue",
+      "label": "乏力",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["hematology", "endocrinology", "cardiovascular", "infection", "rheumatology"],
+      "order": 32,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "pallor",
+      "label": "苍白",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["hematology", "digestive"],
+      "order": 33,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "bleeding_tendency",
+      "label": "出血倾向",
+      "type": "bleeding",
+      "region_ids": ["general"],
+      "system_ids": ["hematology", "digestive", "gynecology"],
+      "order": 34,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "lymphadenopathy",
+      "label": "淋巴结肿大",
+      "type": "lymphadenopathy",
+      "region_ids": ["general"],
+      "system_ids": ["hematology", "infection", "rheumatology"],
+      "order": 35,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "temperature_intolerance",
+      "label": "怕冷与怕热",
+      "type": "systemic",
+      "region_ids": ["general"],
+      "system_ids": ["endocrinology"],
+      "order": 36,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "joint_pain",
+      "label": "关节痛",
+      "type": "pain",
+      "region_ids": ["limbs_joints"],
+      "system_ids": ["rheumatology", "infection", "hematology"],
+      "order": 37,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "morning_stiffness",
+      "label": "晨僵",
+      "type": "stiffness",
+      "region_ids": ["limbs_joints"],
+      "system_ids": ["rheumatology"],
+      "order": 38,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "back_pain",
+      "label": "背痛",
+      "type": "pain",
+      "region_ids": ["back_flank"],
+      "system_ids": ["rheumatology", "urinary", "neurology"],
+      "order": 39,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    },
+    {
+      "key": "rash",
+      "label": "皮疹",
+      "type": "rash",
+      "region_ids": ["general"],
+      "system_ids": ["rheumatology", "infection", "hematology"],
+      "order": 40,
+      "interview_focus": ["起病时间与诱因", "部位、性质与程度", "伴随症状与缓解因素"]
+    }
+  ],
+  "organs": [
+    { "id": "heart", "label": "心脏", "system_id": "cardiovascular", "order": 1 },
+    { "id": "coronary_arteries", "label": "冠状动脉", "system_id": "cardiovascular", "order": 2 },
+    { "id": "aorta", "label": "主动脉", "system_id": "cardiovascular", "order": 3 },
+    { "id": "peripheral_arteries", "label": "外周动脉", "system_id": "cardiovascular", "order": 4 },
+    { "id": "upper_airway", "label": "上气道", "system_id": "respiratory", "order": 1 },
+    { "id": "trachea", "label": "气管", "system_id": "respiratory", "order": 2 },
+    { "id": "bronchi", "label": "支气管", "system_id": "respiratory", "order": 3 },
+    { "id": "lungs", "label": "肺", "system_id": "respiratory", "order": 4 },
+    { "id": "pleura", "label": "胸膜", "system_id": "respiratory", "order": 5 },
+    { "id": "esophagus", "label": "食管", "system_id": "digestive", "order": 1 },
+    { "id": "stomach", "label": "胃", "system_id": "digestive", "order": 2 },
+    { "id": "liver", "label": "肝脏", "system_id": "digestive", "order": 3 },
+    { "id": "gallbladder", "label": "胆囊", "system_id": "digestive", "order": 4 },
+    { "id": "pancreas", "label": "胰腺", "system_id": "digestive", "order": 5 },
+    { "id": "small_intestine", "label": "小肠", "system_id": "digestive", "order": 6 },
+    { "id": "colon", "label": "结肠", "system_id": "digestive", "order": 7 },
+    { "id": "rectum", "label": "直肠", "system_id": "digestive", "order": 8 },
+    { "id": "brain", "label": "脑", "system_id": "neurology", "order": 1 },
+    { "id": "meninges", "label": "脑膜", "system_id": "neurology", "order": 2 },
+    { "id": "spinal_cord", "label": "脊髓", "system_id": "neurology", "order": 3 },
+    { "id": "cranial_nerves", "label": "脑神经", "system_id": "neurology", "order": 4 },
+    { "id": "peripheral_nerves", "label": "周围神经", "system_id": "neurology", "order": 5 },
+    { "id": "kidneys", "label": "肾脏", "system_id": "urinary", "order": 1 },
+    { "id": "ureters", "label": "输尿管", "system_id": "urinary", "order": 2 },
+    { "id": "bladder", "label": "膀胱", "system_id": "urinary", "order": 3 },
+    { "id": "urethra", "label": "尿道", "system_id": "urinary", "order": 4 },
+    { "id": "pituitary", "label": "垂体", "system_id": "endocrinology", "order": 1 },
+    { "id": "thyroid", "label": "甲状腺", "system_id": "endocrinology", "order": 2 },
+    { "id": "adrenal_glands", "label": "肾上腺", "system_id": "endocrinology", "order": 3 },
+    { "id": "pancreatic_islets", "label": "胰岛", "system_id": "endocrinology", "order": 4 },
+    { "id": "bone_marrow", "label": "骨髓", "system_id": "hematology", "order": 1 },
+    { "id": "spleen", "label": "脾", "system_id": "hematology", "order": 2 },
+    { "id": "lymph_nodes", "label": "淋巴结", "system_id": "hematology", "order": 3 },
+    { "id": "blood", "label": "血液", "system_id": "hematology", "order": 4 },
+    { "id": "joints", "label": "关节", "system_id": "rheumatology", "order": 1 },
+    { "id": "muscles", "label": "肌肉", "system_id": "rheumatology", "order": 2 },
+    { "id": "connective_tissue", "label": "结缔组织", "system_id": "rheumatology", "order": 3 },
+    { "id": "spine", "label": "脊柱", "system_id": "rheumatology", "order": 4 },
+    { "id": "uterus", "label": "子宫", "system_id": "gynecology", "order": 1 },
+    { "id": "ovaries", "label": "卵巢", "system_id": "gynecology", "order": 2 },
+    { "id": "fallopian_tubes", "label": "输卵管", "system_id": "gynecology", "order": 3 },
+    { "id": "cervix", "label": "宫颈", "system_id": "gynecology", "order": 4 },
+    { "id": "vagina", "label": "阴道", "system_id": "gynecology", "order": 5 },
+    { "id": "immune_system", "label": "免疫系统", "system_id": "infection", "order": 1 },
+    { "id": "skin", "label": "皮肤", "system_id": "infection", "order": 2 },
+    { "id": "mucous_membranes", "label": "黏膜", "system_id": "infection", "order": 3 }
+  ]
+}
