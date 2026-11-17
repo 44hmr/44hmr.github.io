@@ -1,0 +1,266 @@
+{
+  "case_id": "chest_pain_02",
+  "case_name": "胸痛问诊",
+  "version": "1.0",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-02",
+  "sources": [
+    "中华医学会消化病学分会《2020年中国胃食管反流病专家共识》",
+    "中华医学会《胸痛基层诊疗指南(2019年)》",
+    "ACG Clinical Guideline for the Diagnosis and Management of GERD (2022)",
+    "2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR Chest Pain Guideline"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "引导并归纳主诉（胸痛与持续时间）",
+          "hit_criteria": "询问主要不适及持续时间，或复述确认主诉",
+          "keywords": ["哪里不舒服", "怎么不舒服", "哪不舒服", "主要症状", "来看什么病", "什么毛病", "怎么不好", "什么时候开始", "多久了", "胸痛", "胸口怎么"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["胸骨后烧灼痛伴反酸三个月，近一周加重"]
+        },
+        {
+          "id": "P02",
+          "content": "胸痛部位",
+          "hit_criteria": "询问疼痛的具体位置/哪里疼",
+          "keywords": ["哪里疼", "哪儿疼", "哪个位置", "具体位置", "什么位置", "部位", "胸骨", "心口", "胸口哪", "剑突"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["胸骨后、心口窝，有时串到嗓子"]
+        },
+        {
+          "id": "P03a",
+          "content": "胸痛性质",
+          "hit_criteria": "询问疼痛是什么样的（烧灼样/压榨样/撕裂样/针刺样等）",
+          "keywords": ["什么样的疼", "怎么个疼法", "疼法", "性质", "烧灼", "火烧", "火辣", "烧心", "压榨", "压着", "撕裂", "针扎", "刀割", "怎么疼"],
+          "rw_score": 3, "yj_score": 0.75, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["烧灼样，不是压榨样或撕裂样"]
+        },
+        {
+          "id": "P03b",
+          "content": "胸痛程度",
+          "hit_criteria": "询问疼痛严重程度/能否忍受/是否影响活动或睡眠",
+          "keywords": ["厉害吗", "多疼", "疼得厉害", "程度", "几分", "评分", "影响", "干活", "忍受", "受得了", "睡不好"],
+          "rw_score": 2, "yj_score": 0.75, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["烧得心烦，晚上睡不好，但还能干活"]
+        },
+        {
+          "id": "P04",
+          "content": "发作诱因",
+          "hit_criteria": "询问疼痛的发作诱因（进食/体位/劳累/情绪等）",
+          "keywords": ["什么情况下犯", "什么时候犯", "诱因", "吃完饭", "吃饭", "饱餐", "躺下", "弯腰", "夜宵", "浓茶", "咖啡", "辛辣", "劳累", "干活", "情绪", "打嗝", "嗳气"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["饱餐、躺下、弯腰时明显；跟干活没关系"]
+        },
+        {
+          "id": "P05",
+          "content": "持续时间与发作频率",
+          "hit_criteria": "询问每次持续多久、多久发作一次、夜间是否发作",
+          "keywords": ["每次", "多长时间", "多久", "几次", "频率", "发作一次", "晚上", "夜里", "夜间", "持续多久", "烧醒"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["每次半小时到一小时，一周三四次，夜里有时烧醒"]
+        },
+        {
+          "id": "P06",
+          "content": "放射痛",
+          "hit_criteria": "询问疼痛是否向其他部位放射（咽部/后背/左肩臂/下颌）",
+          "keywords": ["放射", "往别的地方", "串", "牵扯", "嗓子", "咽部", "后背", "背部", "肩膀", "胳膊", "手臂", "下颌", "下巴"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["有时串到嗓子，后背有点烧；不往左肩臂放射"]
+        },
+        {
+          "id": "P07",
+          "content": "缓解与加重因素",
+          "hit_criteria": "询问什么情况下减轻或加重（体位/进食/抗酸药/硝酸甘油）",
+          "keywords": ["缓解", "减轻", "加重", "休息", "坐起来", "喝水", "胃药", "抗酸药", "硝酸甘油", "含服", "躺下", "弯腰", "呼吸", "深呼吸", "翻身", "体位", "什么情况下能", "好转"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["坐起来/喝水/抗酸药缓解", "躺下/弯腰加重", "未用过硝酸甘油"]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·心肺相关",
+          "hit_criteria": "询问心悸/呼吸困难/大汗/咯血/下肢肿痛/长途旅行或卧床制动等",
+          "keywords": ["心慌", "心悸", "气短", "喘不上气", "喘", "呼吸困难", "憋气", "出汗", "冷汗", "大汗", "咯血", "咳血", "腿肿", "下肢肿", "水肿", "腿疼", "腿痛", "下肢疼", "下肢痛", "坐飞机", "长途", "卧床"],
+          "rw_score": 1, "yj_score": 0.5, "red_flag": true, "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": ["无心悸、气短、大汗、咯血、下肢肿痛，无长途旅行或卧床制动", "偶有夜间轻咳"]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·消化道报警",
+          "hit_criteria": "询问吞咽困难/吞咽痛/消瘦（体重下降、瘦了）/黑便/呕血/贫血等报警症状",
+          "keywords": ["吞咽", "咽东西", "噎", "吞咽痛", "消瘦", "体重下降", "体重减轻", "瘦了", "黑便", "大便黑", "呕血", "吐血", "贫血", "头晕", "乏力", "食欲"],
+          "rw_score": 1, "yj_score": 0.5, "red_flag": true, "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": ["无吞咽困难、消瘦、黑便、呕血及贫血表现", "食欲正常"]
+        },
+        {
+          "id": "P09",
+          "content": "病情演变",
+          "hit_criteria": "询问病情发展变化（近期是否加重/有无持续剧痛）",
+          "keywords": ["变化", "加重", "好转", "越来越", "这几天", "这礼拜", "进展", "演变", "严重了", "一直疼"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": true, "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": ["近一周发作更频繁、持续时间略长", "性质未变，无持续剧痛"]
+        },
+        {
+          "id": "P10",
+          "content": "诊疗经过",
+          "hit_criteria": "询问是否就诊过/做过心电图或胃镜/用过什么药及疗效",
+          "keywords": ["看过", "就诊", "去医院", "检查", "心电图", "胃镜", "做过什么", "用过什么药", "治疗过", "奥美拉唑", "效果"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["社区查心电图正常", "自行服奥美拉唑/抗酸药有效", "未做胃镜"]
+        },
+        {
+          "id": "P11",
+          "content": "一般情况",
+          "hit_criteria": "询问饮食/睡眠/大小便/体重变化",
+          "keywords": ["吃饭", "饮食", "睡觉", "睡眠", "大小便", "大便", "小便", "体重", "一般情况", "胃口"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["食欲可，睡眠受反流影响", "体重稳定，大小便正常"]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏",
+          "keywords": ["过敏", "药物过敏", "什么药过敏"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无"]
+        },
+        {
+          "id": "R02",
+          "content": "既往相关病史",
+          "hit_criteria": "询问高血压/糖尿病/心脏病/胃病/止痛药等病史",
+          "keywords": ["高血压", "糖尿病", "心脏病", "冠心病", "胃病", "胃炎", "溃疡", "止痛药", "布洛芬", "阿司匹林", "血栓", "静脉血栓", "肺栓塞", "既往", "基础病", "以前得过"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["高血压五年，吃药控制", "无糖尿病、心脏病、胃溃疡", "平时不吃止痛药"]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟及吸烟量",
+          "keywords": ["抽烟", "吸烟", "烟", "几支", "一包", "烟龄"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["以前一天一包，戒了五年"]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": ["喝酒", "饮酒", "酒", "酒量"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["晚上偶尔喝一瓶啤酒"]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属心脏病/猝死/消化道肿瘤史",
+          "keywords": ["家族", "家里人", "家人", "父亲", "母亲", "父母", "兄弟", "姐妹", "遗传", "家里", "家中", "亲属", "长辈", "类似", "同样的病", "心脏病", "心梗", "食管癌", "胃癌"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["父亲有高血压，无早发冠心病", "家族无食管癌胃癌"]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": ["手术", "外伤", "受过伤", "做过手术", "开过刀"],
+          "rw_score": 2, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无"]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与月经史",
+          "hit_criteria": "询问婚育情况/女性月经情况",
+          "keywords": ["月经", "婚育", "结婚", "生育", "孩子", "绝经"],
+          "rw_score": 0, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": { "sex": "female" },
+          "core_facts": []
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": ["怎么称呼", "贵姓", "姓名", "叫什么", "我是", "接诊医生", "哪位"],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "ACS 警示症状（需问清）",
+      "description": "本例为烧灼痛，但急性冠脉综合征必须排除：需问清疼痛性质，并询问有无大汗、气短、心悸等伴随症状。两项都问到才算覆盖；病人否认大汗、气短，不等于可以不问。",
+      "severity": "critical",
+      "match": "all",
+      "trigger": "P03a 且 P08a 均命中",
+      "guideline_source": "《胸痛基层诊疗指南(2019)》高危胸痛征象"
+    },
+    {
+      "id": "F02",
+      "name": "消化道报警症状",
+      "description": "吞咽困难、吞咽痛、消瘦、黑便、呕血或贫血提示器质性疾病，需胃镜等进一步评估。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P08b 命中",
+      "guideline_source": "《2020年中国胃食管反流病专家共识》报警症状"
+    },
+    {
+      "id": "F03",
+      "name": "症状进展",
+      "description": "发作频率增加或持续时间延长，提示需要重新评估并排除其他病因。抑酸治疗有效不等于病情进展。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《2020年中国胃食管反流病专家共识》诊断评估"
+    }
+  ],
+  "standard_approach": [
+    { "step": "主诉与时间轴", "text": "先确认主诉，问清胸痛与反酸的起病时间、病程和近期变化。" },
+    { "step": "典型反流症状", "text": "烧心、反酸、餐后及卧位加重、抗酸药缓解，是 GERD 的核心线索。" },
+    { "step": "心脏危险信号", "text": "压榨样疼痛、向左肩臂/下颌放射、大汗、气短、劳力诱发必须先问，必要时查心电图与肌钙蛋白。" },
+    { "step": "消化道报警症状", "text": "吞咽困难、吞咽痛、消瘦、黑便、呕血、贫血提示器质性疾病，需胃镜评估。" },
+    { "step": "诱因与生活方式", "text": "饱餐、夜宵、浓茶咖啡、饮酒、吸烟、肥胖及体位因素都可加重反流。" },
+    { "step": "背景与诊疗经过", "text": "过敏史、既往病史、用药史、家族史与既往检查逐项补充，尤其确认是否做过胃镜。" }
+  ]
+}
