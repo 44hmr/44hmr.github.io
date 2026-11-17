@@ -1,0 +1,265 @@
+{
+  "case_id": "abdominal_pain_01",
+  "case_name": "腹痛问诊",
+  "version": "1.1",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-02",
+  "sources": [
+    "陈孝平, 汪建平, 赵继宗. 外科学（第9版）. 人民卫生出版社, 2018：急性阑尾炎",
+    "万学红, 卢雪峰. 诊断学（第9版）. 人民卫生出版社, 2018：腹痛与腹部检查",
+    "Di Saverio S, et al. WSES Jerusalem guidelines for diagnosis and treatment of acute appendicitis. World Journal of Emergency Surgery, 2020"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "主诉与起病时间",
+          "hit_criteria": "询问主要不适及起病时间",
+          "keywords": ["哪里不舒服", "怎么不舒服", "哪不舒服", "主要症状", "来看什么病", "什么毛病", "怎么不好", "什么时候开始", "多久了", "肚子疼", "腹痛", "疼了多久", "从什么时候"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["腹痛一天，昨天下午起病", "起病时位于肚脐周围"]
+        },
+        {
+          "id": "P02",
+          "content": "腹痛部位",
+          "hit_criteria": "询问腹痛现在的具体位置",
+          "keywords": ["哪里疼", "哪儿疼", "哪个位置", "具体位置", "什么位置", "部位", "肚子哪", "右边", "右下", "位置"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["疼痛现固定于右下腹"]
+        },
+        {
+          "id": "P03a",
+          "content": "腹痛性质",
+          "hit_criteria": "询问疼痛的性质",
+          "keywords": ["什么样的疼", "怎么个疼法", "疼法", "性质", "胀痛", "绞痛", "烧灼", "火烧", "刀割", "针扎", "刺痛", "隐痛", "闷痛", "怎么疼"],
+          "rw_score": 2, "yj_score": 0.75, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["持续性胀痛，不是烧灼样或刀割样"]
+        },
+        {
+          "id": "P03b",
+          "content": "腹痛程度",
+          "hit_criteria": "询问疼痛的严重程度",
+          "keywords": ["厉害吗", "多疼", "疼得厉害", "程度", "几分", "评分", "影响", "忍受", "受得了", "直不起腰", "打滚", "睡不着"],
+          "rw_score": 2, "yj_score": 0.75, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["疼痛较重，影响走路和睡眠", "尚未到打滚或无法忍受的程度"]
+        },
+        {
+          "id": "P04",
+          "content": "起病诱因",
+          "hit_criteria": "询问发病前有无不洁饮食或暴饮暴食等诱因",
+          "keywords": ["诱因", "什么情况下开始", "之前吃了什么", "不干净", "不洁", "剩饭", "路边摊", "暴饮暴食", "油腻", "受凉", "劳累"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无明确诱因，发病前饮食如常"]
+        },
+        {
+          "id": "P05",
+          "content": "疼痛持续性",
+          "hit_criteria": "询问疼痛是持续性还是一阵一阵",
+          "keywords": ["一直疼", "持续", "一阵一阵", "间断", "绞痛", "每次", "多长时间", "多久疼一次", "没停过"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["持续性疼痛，无完全缓解间歇"]
+        },
+        {
+          "id": "P06",
+          "content": "放射痛",
+          "hit_criteria": "询问疼痛是否向腰背、腹股沟或会阴放射",
+          "keywords": ["放射", "往别的地方", "串", "牵扯", "腰", "腰痛", "腰背痛", "腰部", "后背", "背部", "会阴", "大腿根", "腹股沟"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["不向腰背、腹股沟或会阴放射"]
+        },
+        {
+          "id": "P07",
+          "content": "加重与缓解因素",
+          "hit_criteria": "询问活动、咳嗽或体位变化是否加重及有无缓解因素",
+          "keywords": ["加重", "缓解", "减轻", "走路", "活动", "咳嗽", "翻身", "起身", "颠簸", "按压", "蜷着", "屈腿", "热敷", "止痛药", "什么情况下"],
+          "rw_score": 3, "yj_score": 1, "red_flag": true, "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": ["走路、咳嗽、翻身时加重", "蜷腿稍缓解，无完全缓解"]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·消化道",
+          "hit_criteria": "询问恶心、呕吐、食欲不振、腹泻便秘及反酸腹胀等消化道症状",
+          "keywords": ["恶心", "想吐", "呕吐", "吐了", "吐过", "食欲", "不想吃", "没胃口", "腹泻", "拉肚子", "便秘", "排气", "排便", "反酸", "烧心", "嗳气", "腹胀", "胀气"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["恶心、呕吐一次、食欲不振", "无腹泻，大便正常，有排气", "无反酸、烧心、嗳气及腹胀"]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·发热与泌尿生殖",
+          "hit_criteria": "询问发热、寒战及小便情况（尿频尿急尿痛、血尿）、睾丸疼痛",
+          "keywords": ["发烧", "发热", "体温", "寒战", "怕冷", "打寒战", "尿频", "尿急", "尿痛", "小便", "小便有血", "小便带血", "尿血", "尿中带血", "血尿", "睾丸", "阴囊"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": true, "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": ["低热 37.8℃、畏寒", "无尿路症状及睾丸疼痛"]
+        },
+        {
+          "id": "P09",
+          "content": "病情演变与疼痛转移",
+          "hit_criteria": "询问疼痛是否转移及是否逐渐加重",
+          "keywords": ["转移", "挪", "跑", "变化", "加重", "越来越", "后来", "演变", "进展", "固定", "肚脐周围", "右下腹"],
+          "rw_score": 3, "yj_score": 0.5, "red_flag": true, "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": ["脐周痛约 10 小时后转移并固定于右下腹", "疼痛逐渐加重"]
+        },
+        {
+          "id": "P10",
+          "content": "诊疗经过",
+          "hit_criteria": "询问是否就诊、做过检查或用过药物",
+          "keywords": ["看过", "就诊", "去医院", "检查", "做过什么", "用过什么药", "吃过药", "吃药", "输液", "打针", "效果"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["未就诊，未用药，未做检查"]
+        },
+        {
+          "id": "P11",
+          "content": "一般情况",
+          "hit_criteria": "询问饮食（含进食与疼痛的关系）、睡眠、大小便及体重变化",
+          "keywords": ["吃饭", "吃饭后", "饭后", "空腹", "进食", "饮食", "睡觉", "睡眠", "大小便", "大便", "体重", "一般情况", "胃口"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["食欲差，睡眠受疼痛影响", "大小便正常，体重无明显变化"]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏",
+          "keywords": ["过敏", "药物过敏", "什么药过敏"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无药物过敏史"]
+        },
+        {
+          "id": "R02",
+          "content": "既往病史与类似发作",
+          "hit_criteria": "询问高血压、糖尿病等基础病及既往类似腹痛",
+          "keywords": ["高血压", "糖尿病", "心脏病", "基础病", "既往", "以前得过", "阑尾炎", "类似", "以前疼过", "这样疼过", "犯过"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无高血压、糖尿病等基础病", "既往无类似腹痛及阑尾炎史"]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟",
+          "keywords": ["抽烟", "吸烟", "烟", "几支", "一包", "烟龄"],
+          "rw_score": 1, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["不吸烟"]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": ["喝酒", "饮酒", "酒", "酒量"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["偶尔饮啤酒，发病前未饮酒"]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属消化道肿瘤等家族史",
+          "keywords": ["家族", "家里人", "家人", "父亲", "母亲", "父母", "兄弟", "姐妹", "遗传", "家里", "家中", "亲属", "长辈", "类似", "同样的病", "肠癌", "结肠癌", "消化道肿瘤", "胃癌"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["家族无消化道肿瘤病史"]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": ["手术", "外伤", "受过伤", "做过手术", "开过刀", "腹部手术"],
+          "rw_score": 2, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无腹部手术及外伤史"]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与月经史",
+          "hit_criteria": "询问婚育情况或女性月经情况",
+          "keywords": ["月经", "婚育", "结婚", "生育", "孩子", "绝经"],
+          "rw_score": 0, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": { "sex": "female" },
+          "core_facts": []
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": ["怎么称呼", "贵姓", "姓名", "叫什么", "我是", "接诊医生", "哪位"],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "腹膜刺激警示",
+      "description": "活动、咳嗽或翻身时腹痛明显加重，提示腹膜刺激，需警惕阑尾穿孔及弥漫性腹膜炎。",
+      "severity": "critical",
+      "match": "any",
+      "trigger": "P07 命中",
+      "guideline_source": "《外科学》第9版 急性阑尾炎"
+    },
+    {
+      "id": "F02",
+      "name": "发热与感染警示",
+      "description": "腹痛伴发热、寒战提示感染进展或脓肿形成，需评估生命体征、炎症指标及影像学。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P08b 命中",
+      "guideline_source": "WSES 2020 急性阑尾炎指南"
+    },
+    {
+      "id": "F03",
+      "name": "疼痛转移与进展",
+      "description": "疼痛由脐周转移并固定于右下腹、逐渐加重，是急性阑尾炎的典型演变，需尽快完成外科评估。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《外科学》第9版 急性阑尾炎"
+    }
+  ],
+  "standard_approach": [
+    { "step": "主诉与时间轴", "text": "先确认主诉，问清腹痛的起病时间、持续时间及近期变化。" },
+    { "step": "转移性右下腹痛", "text": "疼痛是否由脐周转移并固定于右下腹，是急性阑尾炎最重要的问诊线索。" },
+    { "step": "疼痛特征与腹膜刺激", "text": "问清性质、程度，以及活动、咳嗽或翻身是否加重；压痛、反跳痛属于体格检查，问诊阶段先用这些活动相关表现间接判断腹膜刺激。" },
+    { "step": "伴随症状", "text": "恶心、呕吐、食欲不振、低热提示感染与消化道受累；同时问清尿路及睾丸症状，避免漏诊泌尿生殖系统疾病。" },
+    { "step": "鉴别诊断", "text": "重点排除消化道穿孔、右侧输尿管结石、右侧睾丸扭转等急需处理的疾病；女性患者补充月经史与妇科情况。" },
+    { "step": "背景与诊疗经过", "text": "补充过敏史、基础病、既往腹痛或阑尾炎史、手术外伤史、家族史及本次就诊前的检查和用药。" }
+  ]
+}
