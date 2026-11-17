@@ -1,0 +1,623 @@
+{
+  "case_id": "cough_01",
+  "case_name": "咳嗽问诊",
+  "version": "1.0",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-04",
+  "sources": [
+    "中华医学会呼吸病学分会《中国成人社区获得性肺炎诊断和治疗指南（2016年版）》",
+    "中华医学会呼吸病学分会《肺血栓栓塞症诊治与预防指南（2018）》",
+    "《内科学》第九版（人民卫生出版社）呼吸系统疾病篇",
+    "ATS/IDSA Diagnosis and Treatment of Adults with Community-acquired Pneumonia (2019)"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "引导并归纳主诉（咳嗽、咳痰与持续时间）",
+          "hit_criteria": "询问主要不适、咳嗽与持续时间，或复述确认主诉",
+          "keywords": [
+            "哪里不舒服",
+            "怎么不舒服",
+            "哪不舒服",
+            "主要症状",
+            "来看什么病",
+            "什么毛病",
+            "怎么不好",
+            "咳嗽",
+            "咳痰",
+            "多久了",
+            "什么时候开始"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "咳嗽、咳黄脓痰伴发热四天"
+          ]
+        },
+        {
+          "id": "P02",
+          "content": "咳嗽性质与痰液性状",
+          "hit_criteria": "询问干咳还是咳痰，痰的颜色、量、有无血丝或臭味",
+          "keywords": [
+            "干咳",
+            "有痰",
+            "痰",
+            "黄痰",
+            "脓痰",
+            "白痰",
+            "痰多",
+            "痰少",
+            "什么颜色",
+            "痰臭",
+            "臭味",
+            "有味儿",
+            "怪味"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "咳黄脓痰，每天十几口，无血丝、无臭味"
+          ]
+        },
+        {
+          "id": "P03a",
+          "content": "发热与寒战",
+          "hit_criteria": "询问最高体温、有无寒战、发热的时间规律",
+          "keywords": [
+            "发烧",
+            "发热",
+            "体温",
+            "多少度",
+            "几度",
+            "寒战",
+            "发冷",
+            "打寒颤",
+            "打哆嗦",
+            "烧到"
+          ],
+          "rw_score": 3,
+          "yj_score": 0.75,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "最高 39.2℃，寒战后发热，下午和晚上烧得高"
+          ]
+        },
+        {
+          "id": "P03b",
+          "content": "咳嗽程度与影响",
+          "hit_criteria": "询问咳嗽严重程度、是否影响睡眠或日常活动",
+          "keywords": [
+            "咳得厉害",
+            "厉害吗",
+            "程度",
+            "影响",
+            "睡不着",
+            "咳醒",
+            "晚上睡",
+            "干活",
+            "受得了",
+            "剧烈"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.75,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "夜里咳醒七八次，白天乏力"
+          ]
+        },
+        {
+          "id": "P04",
+          "content": "起病诱因",
+          "hit_criteria": "询问起病前有无受凉、淋雨或接触呼吸道感染患者",
+          "keywords": [
+            "诱因",
+            "什么原因",
+            "受凉",
+            "着凉",
+            "淋雨",
+            "吹风",
+            "感冒",
+            "接触",
+            "传染",
+            "怎么开始的"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "一周前淋雨受凉，两天后开始咳嗽发热"
+          ]
+        },
+        {
+          "id": "P05",
+          "content": "病程与咳嗽频率",
+          "hit_criteria": "询问咳嗽持续多久、每天大概多少次、夜间是否加重",
+          "keywords": [
+            "多久了",
+            "多长时间",
+            "每天",
+            "一天",
+            "几次",
+            "多少回",
+            "咳多少次",
+            "频率",
+            "夜里",
+            "晚上",
+            "持续",
+            "几天了"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "四天，昼夜都咳，夜里更密，一晚七八次"
+          ]
+        },
+        {
+          "id": "P06",
+          "content": "胸痛与呼吸的关系",
+          "hit_criteria": "询问有无胸痛，胸痛是否在深呼吸或咳嗽时加重",
+          "keywords": [
+            "胸痛",
+            "胸口疼",
+            "胸口痛",
+            "呼吸时疼",
+            "深呼吸",
+            "咳嗽时疼",
+            "吸气疼",
+            "胸膜"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "左侧胸口刺痛，深呼吸和咳嗽时明显"
+          ]
+        },
+        {
+          "id": "P07",
+          "content": "加重与缓解因素",
+          "hit_criteria": "询问什么情况下咳嗽加重或减轻（体位、冷空气、用药）",
+          "keywords": [
+            "缓解",
+            "减轻",
+            "躺下",
+            "平卧",
+            "冷空气",
+            "喝水",
+            "什么情况下",
+            "好点"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "平卧和冷空气加重，坐起喝热水稍好；退烧药能退一阵"
+          ]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·呼吸危重线索",
+          "hit_criteria": "询问气短（喘不上气）、下肢肿痛、长途旅行或卧床制动",
+          "keywords": [
+            "气短",
+            "喘",
+            "喘不上气",
+            "呼吸困难",
+            "憋气",
+            "腿肿",
+            "下肢肿",
+            "腿疼",
+            "坐飞机",
+            "长途",
+            "卧床",
+            "动不了"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": [
+            "近一天活动后气短，说话多了也喘",
+            "无下肢肿痛，无长途旅行或卧床"
+          ]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·结核与肿瘤报警",
+          "hit_criteria": "询问咯血（咳血、痰中带血）、盗汗、消瘦（体重下降、瘦了）、乏力与食欲",
+          "keywords": [
+            "咯血",
+            "咳血",
+            "痰中带血",
+            "痰里带血",
+            "带血丝",
+            "盗汗",
+            "夜里出汗",
+            "消瘦",
+            "体重下降",
+            "瘦了",
+            "乏力",
+            "没劲",
+            "食欲",
+            "胃口"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": [
+            "无咯血、无盗汗、无消瘦",
+            "食欲差、乏力"
+          ]
+        },
+        {
+          "id": "P09",
+          "content": "病情演变",
+          "hit_criteria": "询问四天来症状变化，是否加重或出现新症状",
+          "keywords": [
+            "变化",
+            "加重",
+            "好转",
+            "越来越",
+            "这几天",
+            "进展",
+            "演变",
+            "严重了",
+            "新出现",
+            "之前",
+            "变重",
+            "有没有变",
+            "重了",
+            "比刚起病",
+            "起病那几天",
+            "比那几天",
+            "多了还是",
+            "是多了还是"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": [
+            "四天来逐渐加重，近一天出现气短"
+          ]
+        },
+        {
+          "id": "P10",
+          "content": "诊疗经过",
+          "hit_criteria": "询问是否就诊、做过胸片或血常规、用过什么药及疗效",
+          "keywords": [
+            "看过",
+            "就诊",
+            "医院",
+            "诊所",
+            "检查",
+            "胸片",
+            "拍片",
+            "血常规",
+            "化验",
+            "用过什么药",
+            "抗生素",
+            "退烧药",
+            "效果"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "诊所开退烧药和止咳糖浆，退了又烧",
+            "未拍胸片、未验血"
+          ]
+        },
+        {
+          "id": "P11",
+          "content": "一般情况",
+          "hit_criteria": "询问饮食、睡眠、大小便与体重变化",
+          "keywords": [
+            "吃饭",
+            "饮食",
+            "睡觉",
+            "睡眠",
+            "大小便",
+            "大便",
+            "小便",
+            "体重",
+            "一般情况",
+            "胃口"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "食欲差、夜间睡不好",
+            "大小便正常，体重无明显变化"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏，尤其是青霉素、头孢类",
+          "keywords": [
+            "过敏",
+            "药物过敏",
+            "青霉素",
+            "头孢",
+            "什么药过敏"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "青霉素过敏，曾起皮疹"
+          ]
+        },
+        {
+          "id": "R02",
+          "content": "既往相关病史",
+          "hit_criteria": "询问糖尿病、慢阻肺、哮喘、结核病史，近期是否住院或使用免疫抑制剂",
+          "keywords": [
+            "糖尿病",
+            "高血压",
+            "慢阻肺",
+            "哮喘",
+            "结核",
+            "免疫",
+            "激素",
+            "住院",
+            "基础病",
+            "既往",
+            "以前得过",
+            "老毛病"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无糖尿病、慢阻肺、哮喘",
+            "无结核病史，近期未住院"
+          ]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟、每天支数与烟龄",
+          "keywords": [
+            "抽烟",
+            "吸烟",
+            "烟",
+            "几支",
+            "一包",
+            "烟龄",
+            "几年"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "吸烟二十年，每天一包"
+          ]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": [
+            "喝酒",
+            "饮酒",
+            "酒",
+            "酒量"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "偶尔和工友喝啤酒，量不大"
+          ]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属结核、肺癌或慢性呼吸道疾病史",
+          "keywords": [
+            "家族",
+            "家里人",
+            "家人",
+            "父亲",
+            "母亲",
+            "父母",
+            "兄弟",
+            "姐妹",
+            "遗传",
+            "结核",
+            "肺癌",
+            "家里",
+            "家中",
+            "亲属",
+            "长辈",
+            "类似",
+            "同样的病"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "父亲高血压",
+            "家族无结核、无肺癌"
+          ]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": [
+            "手术",
+            "外伤",
+            "受过伤",
+            "做过手术",
+            "开过刀"
+          ],
+          "rw_score": 2,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无"
+          ]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与月经史",
+          "hit_criteria": "询问婚育情况或女性月经情况",
+          "keywords": [
+            "月经",
+            "婚育",
+            "结婚",
+            "生育",
+            "孩子",
+            "绝经"
+          ],
+          "rw_score": 0,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {
+            "sex": "female"
+          },
+          "core_facts": []
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": [
+        "怎么称呼",
+        "贵姓",
+        "姓名",
+        "叫什么",
+        "我是",
+        "接诊医生",
+        "哪位"
+      ],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "重症肺炎与低氧警示（需问清）",
+      "description": "发热伴气短提示可能进展为重症肺炎，也可能提示肺栓塞：需问清体温与寒战，并问清活动后气短程度、有无下肢肿痛或制动。两项都问到才算覆盖；病人否认腿肿、无制动，不等于可以不问。",
+      "severity": "critical",
+      "match": "all",
+      "trigger": "P03a 且 P08a 均命中",
+      "guideline_source": "《中国成人社区获得性肺炎诊断和治疗指南（2016年版）》重症肺炎判断标准"
+    },
+    {
+      "id": "F02",
+      "name": "结核与肿瘤报警症状（需问清）",
+      "description": "咯血、盗汗、消瘦提示肺结核或肺部肿瘤，需专门问清；病人阴性也要问过才算排除。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P08b 命中",
+      "guideline_source": "《中国成人社区获得性肺炎诊断和治疗指南（2016年版）》鉴别诊断"
+    },
+    {
+      "id": "F03",
+      "name": "病情进展（需问清）",
+      "description": "四天内症状逐日加重并新出现气短，提示感染进展，需要评估氧合与收治指征；退烧药暂时退热不等于好转。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《中国成人社区获得性肺炎诊断和治疗指南（2016年版）》病情严重程度评估"
+    }
+  ],
+  "standard_approach": [
+    {
+      "step": "主诉与时间轴",
+      "text": "确认咳嗽、咳痰的起病时间、病程和近期变化，先分清急性还是亚急性。"
+    },
+    {
+      "step": "痰液与发热",
+      "text": "痰的颜色、量、有无血丝或臭味，发热的最高体温与寒战，是判断细菌感染与肺实质受累的核心。"
+    },
+    {
+      "step": "呼吸危重线索",
+      "text": "活动后气短、呼吸频率、下肢肿痛与制动史必须问，用于识别重症肺炎与肺栓塞。"
+    },
+    {
+      "step": "结核与肿瘤报警",
+      "text": "咯血、盗汗、消瘦、吸烟史提示肺结核或肺癌，需影像与痰检鉴别。"
+    },
+    {
+      "step": "背景与用药",
+      "text": "过敏史（尤其青霉素）、糖尿病、慢阻肺、免疫抑制与近期住院史影响经验性用药选择。"
+    },
+    {
+      "step": "诊疗经过与一般情况",
+      "text": "是否拍过胸片、验过血、用过抗生素及疗效，以及饮食睡眠体重，决定下一步检查与收治。"
+    }
+  ]
+}
