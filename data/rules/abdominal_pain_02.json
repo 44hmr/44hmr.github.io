@@ -1,0 +1,265 @@
+{
+  "case_id": "abdominal_pain_02",
+  "case_name": "腹痛问诊",
+  "version": "1.0",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-03",
+  "sources": [
+    "谢幸, 孔北华, 段涛. 妇产科学（第9版）. 人民卫生出版社, 2018：异位妊娠",
+    "万学红, 卢雪峰. 诊断学（第9版）. 人民卫生出版社, 2018：腹痛与腹部检查",
+    "ACOG Practice Bulletin No. 193: Tubal Ectopic Pregnancy. Obstetrics & Gynecology, 2018"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "主诉与起病时间",
+          "hit_criteria": "询问主要不适及起病时间",
+          "keywords": ["哪里不舒服", "怎么不舒服", "哪不舒服", "主要症状", "来看什么病", "什么毛病", "怎么不好", "什么时候开始", "从什么时候", "多久了", "肚子疼", "腹痛", "疼了多久"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["腹痛 3 小时，突然起病"]
+        },
+        {
+          "id": "P02",
+          "content": "腹痛部位",
+          "hit_criteria": "询问腹痛现在的具体位置",
+          "keywords": ["哪里疼", "哪儿疼", "哪个位置", "具体位置", "什么位置", "部位", "肚子哪", "左边", "左侧", "左下", "左下腹", "位置"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["疼痛位于左下腹"]
+        },
+        {
+          "id": "P03a",
+          "content": "腹痛性质",
+          "hit_criteria": "询问疼痛的性质",
+          "keywords": ["什么样的疼", "怎么个疼法", "疼法", "性质", "胀痛", "绞痛", "烧灼", "火烧", "刀割", "针扎", "刺痛", "撕裂", "撕着", "怎么疼", "一阵一阵"],
+          "rw_score": 2, "yj_score": 0.75, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["突发撕裂样或刀割样锐痛", "不是一阵一阵的绞痛"]
+        },
+        {
+          "id": "P03b",
+          "content": "腹痛程度",
+          "hit_criteria": "询问疼痛的严重程度及对活动的影响",
+          "keywords": ["厉害吗", "多疼", "疼得厉害", "程度", "几分", "评分", "影响", "影响走路", "忍受", "受得了", "直不起腰", "打滚", "走不了"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["疼痛剧烈，约 8-9 分，影响行走"]
+        },
+        {
+          "id": "P04",
+          "content": "停经史",
+          "hit_criteria": "询问末次月经时间、月经是否规律及有无停经",
+          "keywords": ["月经", "末次月经", "上次月经", "最后一次月经", "停经", "多久没来", "推迟", "规律", "周期", "两个月没来", "怀孕"],
+          "rw_score": 3, "yj_score": 1, "red_flag": true, "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": ["平时月经规律，周期 28-29 天", "本次停经 6 周余"]
+        },
+        {
+          "id": "P05",
+          "content": "阴道流血与分泌物",
+          "hit_criteria": "询问有无阴道流血、出血量、颜色及分泌物异常",
+          "keywords": ["出血", "流血", "阴道", "下面", "见红", "分泌物", "白带", "异味", "血块", "组织物"],
+          "rw_score": 3, "yj_score": 1, "red_flag": true, "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": ["少量暗红色阴道流血，无血块及组织物", "无异常分泌物及异味"]
+        },
+        {
+          "id": "P06",
+          "content": "放射痛与牵涉痛",
+          "hit_criteria": "询问疼痛是否向肩部、腰背或下肢放射及有无肛门坠胀",
+          "keywords": ["放射", "往别的地方", "串", "牵扯", "肩", "肩膀", "肛门", "坠胀", "坠得慌", "腰", "腰疼", "腰痛", "后背", "背部", "大腿根", "会阴"],
+          "rw_score": 2, "yj_score": 1, "red_flag": true, "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": ["左肩牵涉痛", "肛门坠胀", "不向腰背及下肢放射"]
+        },
+        {
+          "id": "P07",
+          "content": "加重与缓解因素",
+          "hit_criteria": "询问活动、咳嗽或体位变化是否加重及有无缓解因素",
+          "keywords": ["加重", "缓解", "减轻", "走路", "活动", "咳嗽", "翻身", "起身", "颠簸", "按压", "蜷着", "屈腿", "热敷", "止痛药", "什么情况下"],
+          "rw_score": 3, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["活动、咳嗽、翻身时加重", "平卧蜷腿稍缓解，无完全缓解"]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·消化道",
+          "hit_criteria": "询问恶心、呕吐、食欲、腹泻便秘及反酸腹胀等消化道症状",
+          "keywords": ["恶心", "想吐", "呕吐", "吐了", "吐过", "食欲", "不想吃", "没胃口", "腹泻", "拉肚子", "便秘", "排气", "排便", "反酸", "烧心", "嗳气", "腹胀", "胀气"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["恶心、呕吐一次，食欲不振", "无腹泻，无反酸、烧心及腹胀"]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·发热与泌尿",
+          "hit_criteria": "询问发热、寒战及小便情况（尿频尿急尿痛、血尿）等泌尿症状",
+          "keywords": ["发烧", "发热", "体温", "寒战", "怕冷", "打寒战", "尿频", "尿急", "尿痛", "小便", "小便有血", "小便带血", "尿血", "尿中带血", "血尿"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无发热、寒战", "无尿路症状及血尿"]
+        },
+        {
+          "id": "P09",
+          "content": "晕厥与循环症状",
+          "hit_criteria": "询问头晕、晕厥、出冷汗、心慌、口渴等循环不足表现",
+          "keywords": ["头晕", "晕", "晕倒", "晕过去", "眼前发黑", "黑蒙", "出冷汗", "冷汗", "心慌", "心悸", "口渴", "口干", "手脚发凉", "发冷", "休克", "血压"],
+          "rw_score": 3, "yj_score": 1, "red_flag": true, "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": ["头晕、晕厥一次", "出冷汗、心慌、口渴"]
+        },
+        {
+          "id": "P10",
+          "content": "病情演变",
+          "hit_criteria": "询问起病方式、是否逐渐加重及疼痛有无转移",
+          "keywords": ["转移", "挪", "跑", "变化", "越来越", "越来越重", "逐渐加重", "后来", "演变", "进展", "固定", "一开始", "起病"],
+          "rw_score": 1, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["突然起病并逐渐加重", "疼痛无转移"]
+        },
+        {
+          "id": "P11",
+          "content": "诊疗经过与一般情况",
+          "hit_criteria": "询问就诊检查用药情况、饮食睡眠、大小便及体重变化",
+          "keywords": ["看过", "就诊", "去医院", "检查", "做过什么", "用过什么药", "吃过药", "吃药", "输液", "打针", "效果", "测过怀孕", "验孕", "妊娠试验", "试纸", "吃饭", "饭后", "空腹", "饮食", "睡觉", "睡眠", "大小便", "大便", "体重", "一般情况", "胃口"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["未就诊、未用药、未测妊娠", "食欲睡眠差，大小便正常，体重无明显变化"]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏",
+          "keywords": ["过敏", "药物过敏", "什么药过敏"],
+          "rw_score": 2, "yj_score": 0.5, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无药物过敏史"]
+        },
+        {
+          "id": "R02",
+          "content": "既往病史与妇科病史",
+          "hit_criteria": "询问高血压糖尿病等基础病、盆腔炎史及既往类似腹痛或异位妊娠",
+          "keywords": ["高血压", "糖尿病", "心脏病", "基础病", "既往", "以前得过", "盆腔炎", "附件炎", "妇科病", "妇科炎症", "以前疼过", "这样疼过", "犯过", "宫外孕"],
+          "rw_score": 2, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["无高血压、糖尿病等基础病", "两年前有盆腔炎史", "无既往异位妊娠及类似腹痛"]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟",
+          "keywords": ["抽烟", "吸烟", "烟", "几支", "一包", "烟龄"],
+          "rw_score": 1, "yj_score": 1, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["不吸烟"]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": ["喝酒", "饮酒", "酒", "酒量"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["偶尔饮酒，近期未饮酒"]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属妇科肿瘤等家族史",
+          "keywords": ["家族", "家里人", "家人", "父亲", "母亲", "父母", "兄弟", "姐妹", "遗传", "家里", "家中", "亲属", "长辈", "类似", "同样的病", "妇科肿瘤", "肿瘤", "癌症"],
+          "rw_score": 2, "yj_score": 0.25, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["家族无妇科肿瘤等病史"]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": ["手术", "外伤", "受过伤", "做过手术", "开过刀", "腹腔镜", "卵巢囊肿"],
+          "rw_score": 2, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": {},
+          "core_facts": ["两年前行卵巢囊肿剥除术", "无外伤史"]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与避孕情况",
+          "hit_criteria": "询问婚姻生育、既往妊娠流产及避孕情况",
+          "keywords": ["结婚", "婚育", "生育", "孩子", "怀过孕", "怀孕过", "流产", "避孕", "上环", "节育", "体外", "安全套"],
+          "rw_score": 0, "yj_score": 0, "red_flag": false, "red_flag_link": null,
+          "applicability": { "sex": "female" },
+          "core_facts": ["已婚两年未育，无妊娠及流产史", "避孕不规律"]
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": ["怎么称呼", "贵姓", "姓名", "叫什么", "我是", "接诊医生", "哪位"],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "腹腔内出血警示",
+      "description": "头晕、晕厥、出冷汗、心慌、口渴提示腹腔内出血导致的血容量不足，需立即评估生命体征并急诊处理。",
+      "severity": "critical",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《妇产科学》第9版 异位妊娠"
+    },
+    {
+      "id": "F02",
+      "name": "异位妊娠警示",
+      "description": "停经或阴道流血提示妊娠相关出血，育龄女性出现腹痛时需首先排除异位妊娠。",
+      "severity": "critical",
+      "match": "any",
+      "trigger": "P04 或 P05 命中",
+      "guideline_source": "ACOG Practice Bulletin No. 193"
+    },
+    {
+      "id": "F03",
+      "name": "腹腔积血刺激警示",
+      "description": "左肩牵涉痛、肛门坠胀提示腹腔内积血刺激膈肌与直肠子宫陷凹。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P06 命中",
+      "guideline_source": "《妇产科学》第9版 异位妊娠"
+    }
+  ],
+  "standard_approach": [
+    { "step": "主诉与时间轴", "text": "先确认主诉，问清腹痛的起病时间、起病方式及近期变化。" },
+    { "step": "育龄女性先排除妊娠", "text": "问清末次月经、有无停经及阴道流血，这是异位妊娠最重要的问诊线索；不能只问腹痛。" },
+    { "step": "腹痛特征与腹腔内出血", "text": "问清疼痛性质、程度、肩部牵涉痛、肛门坠胀，以及头晕、晕厥、出冷汗、心慌等循环不足表现；腹部压痛、反跳痛及宫颈举痛属于体格检查。" },
+    { "step": "伴随症状与鉴别", "text": "恶心呕吐、发热、尿路症状需与阑尾炎、泌尿系结石、盆腔炎等鉴别；腹泻与反酸腹胀有助于排除消化道疾病。" },
+    { "step": "鉴别诊断与检查", "text": "重点排除卵巢囊肿破裂或扭转、急性阑尾炎等急需处理的疾病；β-hCG、经阴道超声、血常规、血型及交叉配血是关键的下一步评估。" },
+    { "step": "背景与诊疗经过", "text": "补充盆腔炎、既往异位妊娠、盆腔手术等危险因素，以及过敏史、吸烟史、手术外伤史、家族史和本次就诊前的检查用药。" }
+  ]
+}
