@@ -1,0 +1,635 @@
+{
+  "case_id": "weakness_01",
+  "case_name": "肢体无力问诊",
+  "version": "1.0",
+  "status": "verified",
+  "status_note": "开发者审核：结构、版本、话术覆盖、分值合计已由脚本校验；临床要点为教学用途，未经执业医师逐条复核。",
+  "reviewed_by": "开发者（项目作者自审）",
+  "reviewed_at": "2026-11-04",
+  "sources": [
+    "中华医学会神经病学分会《中国急性缺血性脑卒中诊治指南 2023》",
+    "中华医学会神经病学分会《中国脑出血诊治指南（2019）》",
+    "AHA/ASA Guidelines for the Early Management of Patients With Acute Ischemic Stroke (2019)",
+    "《神经病学》第八版（人民卫生出版社）脑血管疾病篇"
+  ],
+  "scoring": {
+    "internal_total": 100,
+    "item_count_limit": 20,
+    "yj_reference": {
+      "present_history_max": 10,
+      "related_history_max": 3,
+      "technique_excluded": 2
+    }
+  },
+  "dimensions": [
+    {
+      "key": "present_history",
+      "name": "现病史",
+      "yj_max_score": 10,
+      "items": [
+        {
+          "id": "P00",
+          "content": "引导并归纳主诉与最后正常时间",
+          "hit_criteria": "询问主要不适、起病时间，以及发病前最后正常的时间",
+          "keywords": [
+            "哪里不舒服",
+            "怎么不舒服",
+            "哪不舒服",
+            "主要症状",
+            "来看什么病",
+            "什么毛病",
+            "怎么不好",
+            "胳膊腿",
+            "无力",
+            "使不上劲",
+            "多久了",
+            "最后正常"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "两小时前突发右侧肢体无力，发病前一切正常"
+          ]
+        },
+        {
+          "id": "P02",
+          "content": "无力部位与分布",
+          "hit_criteria": "询问是哪一侧、上肢下肢与面部是否受累，是否为单侧",
+          "keywords": [
+            "哪一侧",
+            "右边",
+            "左边",
+            "哪个位置",
+            "哪边",
+            "左边右边",
+            "上肢",
+            "下肢",
+            "胳膊",
+            "腿",
+            "面部",
+            "嘴角",
+            "单侧",
+            "具体部位"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "右侧上下肢及面部受累，左侧正常"
+          ]
+        },
+        {
+          "id": "P03a",
+          "content": "起病方式",
+          "hit_criteria": "询问是突然起病还是逐渐加重，发病时在做什么",
+          "keywords": [
+            "突然",
+            "突发",
+            "慢慢",
+            "逐渐",
+            "起病",
+            "什么时候开始",
+            "从什么时候",
+            "什么时候起病",
+            "当时在干什么",
+            "睡觉",
+            "醒来",
+            "看电视",
+            "一下子就"
+          ],
+          "rw_score": 3,
+          "yj_score": 0.75,
+          "red_flag": true,
+          "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": [
+            "看电视时突然起病，数分钟内达最重，非逐渐加重"
+          ]
+        },
+        {
+          "id": "P03b",
+          "content": "无力程度",
+          "hit_criteria": "询问能否抬臂、握物、站立或行走",
+          "keywords": [
+            "厉害吗",
+            "程度",
+            "能抬",
+            "抬得起来",
+            "能走",
+            "拿东西",
+            "握",
+            "站得住",
+            "几分",
+            "影响"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.75,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "右臂抬不起，右手握不住杯子，行走向右偏需人扶"
+          ]
+        },
+        {
+          "id": "P04",
+          "content": "起病诱因与外伤",
+          "hit_criteria": "询问发病时在做什么、有无情绪激动、用力、饮酒或摔倒撞伤",
+          "keywords": [
+            "诱因",
+            "什么原因",
+            "当时在干什么",
+            "干什么",
+            "摔倒",
+            "撞到",
+            "磕到",
+            "情绪",
+            "用力"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "发病时坐着看电视，无情绪激动、无用力、无摔倒或头部外伤"
+          ]
+        },
+        {
+          "id": "P05",
+          "content": "持续时间与波动",
+          "hit_criteria": "询问症状是否持续、有无时好时坏或短时恢复",
+          "keywords": [
+            "持续",
+            "多长时间",
+            "一直",
+            "反复",
+            "波动",
+            "时好时坏",
+            "一阵",
+            "几分钟",
+            "没缓解"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "症状持续两小时不缓解，无时好时坏"
+          ]
+        },
+        {
+          "id": "P06",
+          "content": "伴随神经功能缺损",
+          "hit_criteria": "询问言语不清、口角歪斜、吞咽呛咳、视力改变与肢体麻木",
+          "keywords": [
+            "说话",
+            "言语",
+            "口齿",
+            "口角",
+            "歪",
+            "吞咽困难",
+            "呛水",
+            "呛咳",
+            "吞咽",
+            "呛",
+            "视力",
+            "看东西",
+            "重影",
+            "麻木",
+            "发麻",
+            "感觉",
+            "走不稳"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "言语含糊、口角向右歪",
+            "无吞咽困难或呛咳、无视力障碍，右侧面部与手麻木"
+          ]
+        },
+        {
+          "id": "P07",
+          "content": "加重与缓解因素",
+          "hit_criteria": "询问休息能否缓解，发病后是否自行服药或进食",
+          "keywords": [
+            "缓解",
+            "减轻",
+            "休息",
+            "躺着",
+            "吃药",
+            "降压药",
+            "进食",
+            "好点",
+            "什么情况下"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "休息不缓解",
+            "发病后未服药、未进食"
+          ]
+        },
+        {
+          "id": "P08a",
+          "content": "伴随症状·颅内出血警示",
+          "hit_criteria": "询问头痛、呕吐、意识改变、抽搐与头部外伤",
+          "keywords": [
+            "头痛",
+            "头疼",
+            "呕吐",
+            "意识",
+            "昏迷",
+            "不清醒",
+            "抽搐",
+            "抽风",
+            "外伤",
+            "颈痛",
+            "脖子硬"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F01",
+          "applicability": {},
+          "core_facts": [
+            "无头痛、无呕吐、无意识丧失、无抽搐、无头部外伤"
+          ]
+        },
+        {
+          "id": "P08b",
+          "content": "伴随症状·低血糖与心源性线索",
+          "hit_criteria": "询问发病前有无心慌、出汗、手抖、饥饿感，以及发热、胸闷胸痛",
+          "keywords": [
+            "心慌",
+            "心悸",
+            "出汗",
+            "冷汗",
+            "手抖",
+            "饥饿",
+            "饿",
+            "发热",
+            "发烧",
+            "胸闷",
+            "胸痛"
+          ],
+          "rw_score": 1,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F02",
+          "applicability": {},
+          "core_facts": [
+            "无发热、无胸闷胸痛",
+            "发病前无心慌、无冷汗、无手抖、无饥饿感"
+          ]
+        },
+        {
+          "id": "P09",
+          "content": "病情演变",
+          "hit_criteria": "询问两小时内症状是加重、好转还是新出现其他症状",
+          "keywords": [
+            "变化",
+            "加重",
+            "好转",
+            "越来越",
+            "进展",
+            "新出现",
+            "之前",
+            "有没有更",
+            "有没有添",
+            "变重",
+            "有没有变",
+            "重了"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": true,
+          "red_flag_link": "F03",
+          "applicability": {},
+          "core_facts": [
+            "两小时内无力程度无明显加重，也无好转",
+            "未新出现头痛、呕吐或意识改变"
+          ]
+        },
+        {
+          "id": "P10",
+          "content": "诊疗经过",
+          "hit_criteria": "询问是否呼叫急救或就诊，是否做过 CT、测过血糖，用过什么药",
+          "keywords": [
+            "看过",
+            "就诊",
+            "医院",
+            "120",
+            "急救",
+            "检查",
+            "CT",
+            "核磁",
+            "血糖",
+            "用过什么药",
+            "降压药",
+            "阿司匹林"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "未自行服药，家属直接送来",
+            "未做 CT、未测血糖"
+          ]
+        },
+        {
+          "id": "P11",
+          "content": "一般情况",
+          "hit_criteria": "询问饮食、睡眠、大小便与体重变化",
+          "keywords": [
+            "吃饭",
+            "饮食",
+            "睡觉",
+            "睡眠",
+            "大小便",
+            "大便",
+            "小便",
+            "体重",
+            "一般情况",
+            "胃口"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "发病前饮食正常",
+            "大小便正常，体重无明显变化"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "related_history",
+      "name": "相关病史",
+      "yj_max_score": 3,
+      "items": [
+        {
+          "id": "R01",
+          "content": "药物过敏史",
+          "hit_criteria": "询问是否对药物过敏",
+          "keywords": [
+            "过敏",
+            "药物过敏",
+            "什么药过敏"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.5,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无"
+          ]
+        },
+        {
+          "id": "R02",
+          "content": "既往相关病史与用药",
+          "hit_criteria": "询问高血压、糖尿病、房颤、卒中/TIA 史，以及降压、降糖与抗凝用药",
+          "keywords": [
+            "高血压",
+            "糖尿病",
+            "房颤",
+            "心律",
+            "卒中",
+            "中风",
+            "脑梗",
+            "抗凝",
+            "利伐沙班",
+            "华法林",
+            "降压药",
+            "降糖药",
+            "胰岛素",
+            "既往",
+            "基础病"
+          ],
+          "rw_score": 2,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "高血压十年，服氨氯地平",
+            "2 型糖尿病八年，服二甲双胍与格列美脲",
+            "房颤三年，服利伐沙班；无卒中/TIA 史"
+          ]
+        },
+        {
+          "id": "R03",
+          "content": "吸烟史",
+          "hit_criteria": "询问是否吸烟、每天支数与烟龄",
+          "keywords": [
+            "抽烟",
+            "吸烟",
+            "烟",
+            "几支",
+            "一包",
+            "烟龄",
+            "几年"
+          ],
+          "rw_score": 3,
+          "yj_score": 1,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "吸烟三十年，每天一包，未戒"
+          ]
+        },
+        {
+          "id": "R04",
+          "content": "饮酒史",
+          "hit_criteria": "询问饮酒情况",
+          "keywords": [
+            "喝酒",
+            "饮酒",
+            "酒",
+            "酒量"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "偶尔少量饮酒"
+          ]
+        },
+        {
+          "id": "R05",
+          "content": "家族史",
+          "hit_criteria": "询问直系亲属卒中、糖尿病或高血压史",
+          "keywords": [
+            "家族",
+            "家里人",
+            "家人",
+            "父亲",
+            "母亲",
+            "父母",
+            "兄弟",
+            "姐妹",
+            "遗传",
+            "家里人有没有",
+            "家人有没有",
+            "家里有人",
+            "家族有没有",
+            "家族里有没有",
+            "父母有没有",
+            "父亲有没有",
+            "母亲有没有",
+            "亲属有没有",
+            "长辈有没有",
+            "家里",
+            "家中",
+            "亲属",
+            "长辈",
+            "类似",
+            "同样的病"
+          ],
+          "rw_score": 2,
+          "yj_score": 0.25,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "父亲因脑梗死去世",
+            "母亲有糖尿病"
+          ]
+        },
+        {
+          "id": "R06",
+          "content": "手术外伤史",
+          "hit_criteria": "询问既往手术或外伤史",
+          "keywords": [
+            "手术",
+            "外伤",
+            "受过伤",
+            "做过手术",
+            "开过刀"
+          ],
+          "rw_score": 2,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {},
+          "core_facts": [
+            "无"
+          ]
+        },
+        {
+          "id": "R07",
+          "content": "婚育史与月经史",
+          "hit_criteria": "询问婚育情况或女性月经情况",
+          "keywords": [
+            "月经",
+            "婚育",
+            "结婚",
+            "生育",
+            "孩子",
+            "绝经"
+          ],
+          "rw_score": 0,
+          "yj_score": 0,
+          "red_flag": false,
+          "red_flag_link": null,
+          "applicability": {
+            "sex": "female"
+          },
+          "core_facts": []
+        }
+      ]
+    }
+  ],
+  "communication_notes": [
+    {
+      "id": "C01",
+      "content": "自我介绍并核对患者姓名",
+      "hit_criteria": "医生自我介绍、询问患者姓名或称呼",
+      "keywords": [
+        "怎么称呼",
+        "贵姓",
+        "姓名",
+        "叫什么",
+        "我是",
+        "接诊医生",
+        "哪位"
+      ],
+      "note": "属执医'问诊技巧'2分维度，由真人考官评定，本系统不计分，仅在评分卡提示区显示"
+    }
+  ],
+  "red_flags": [
+    {
+      "id": "F01",
+      "name": "颅内出血警示（需问清）",
+      "description": "突发神经功能缺损必须先与脑出血鉴别：需问清起病方式（突发还是渐进），并问清有无头痛、呕吐、意识改变、抽搐与头部外伤。两项都问到才算覆盖；病人否认头痛呕吐，不等于可以不问。",
+      "severity": "critical",
+      "match": "all",
+      "trigger": "P03a 且 P08a 均命中",
+      "guideline_source": "《中国脑出血诊治指南（2019）》急性脑卒中急诊评估"
+    },
+    {
+      "id": "F02",
+      "name": "低血糖与心源性栓塞（需问清）",
+      "description": "服用磺脲类降糖药者出现神经症状必须先排除低血糖；房颤患者需问清心慌、胸闷等心源性线索。需问清出汗、心慌、手抖、饥饿感与胸闷胸痛。",
+      "severity": "critical",
+      "match": "any",
+      "trigger": "P08b 命中",
+      "guideline_source": "《中国急性缺血性脑卒中诊治指南 2023》院前与急诊评估"
+    },
+    {
+      "id": "F03",
+      "name": "病情进展（需问清）",
+      "description": "两小时内症状是否加重、有无新出现意识改变，直接影响再灌注治疗方案的选择；病人主诉“没更厉害”也要问过才算记录。",
+      "severity": "high",
+      "match": "any",
+      "trigger": "P09 命中",
+      "guideline_source": "《中国急性缺血性脑卒中诊治指南 2023》病情评估"
+    }
+  ],
+  "standard_approach": [
+    {
+      "step": "主诉与最后正常时间",
+      "text": "先确定最后正常时间而非仅问“多久了”，这是静脉溶栓时间窗判断的起点。"
+    },
+    {
+      "step": "缺损分布与起病方式",
+      "text": "单侧上下肢加面部的突然缺损提示血管性病变；数分钟内达最重支持缺血性卒中，波动或渐进需另作考虑。"
+    },
+    {
+      "step": "神经功能与出血线索",
+      "text": "言语、吞咽、视力、麻木与共济逐项问清；头痛、呕吐、意识改变、抽搐与外伤用于排除脑出血。"
+    },
+    {
+      "step": "低血糖与心源性",
+      "text": "磺脲类降糖药与房颤是必须问清的两条线：低血糖可完全模拟卒中，房颤提示心源性栓塞。"
+    },
+    {
+      "step": "背景与用药",
+      "text": "高血压、糖尿病、吸烟、既往卒中/TIA 与抗凝药使用，决定再灌注的出血风险与二级预防。"
+    },
+    {
+      "step": "诊疗经过与一般情况",
+      "text": "是否已测血糖、做过 CT，发病后是否进食服药，以及家属发现时间与基线功能状态。"
+    }
+  ]
+}
